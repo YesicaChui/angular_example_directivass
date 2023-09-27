@@ -1,0 +1,24 @@
+<h1 >Lista de alumnos</h1>
+<table appBordeColor>
+  <thead appBordeColor>
+    <tr>
+      <th>Codigo</th>
+      <th>DNI</th>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Facultad</th>
+      <th>Carrera</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let alumno of alumnos">
+      <td>{{alumno.codigo}}</td>
+      <td>{{alumno.dni}}</td>
+      <td>{{alumno.nombre}}</td>
+      <td>{{alumno.apellidos}}</td>
+      <td [ngStyle]="{backgroundColor:obtenerColorFondo(alumno.facultad)}">{{alumno.facultad}}</td>
+      <td>{{alumno.carrera | uppercase}}</td>     
+    </tr>
+  </tbody> 
+
+</table>
